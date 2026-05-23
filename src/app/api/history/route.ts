@@ -7,12 +7,12 @@ export const dynamic = 'force-dynamic';
 export async function GET(req: NextRequest) {
   await ensureSchema();
   const url = new URL(req.url);
-  const module = url.searchParams.get('module');
+  const moduleName = url.searchParams.get('module');
   const limit = Number(url.searchParams.get('limit') || 100);
 
   try {
-    const logs = module
-      ? await query(`SELECT * FROM api_logs WHERE module = $1 ORDER BY created_at DESC LIMIT $2`, [module, limit])
+    const logs = moduleName
+      ? await query(`SELECT * FROM api_logs WHERE module = $1 ORDER BY created_at DESC LIMIT $2`, [moduleName, limit])
       : await query(`SELECT * FROM api_logs ORDER BY created_at DESC LIMIT $1`, [limit]);
 
     const stats = await query(`

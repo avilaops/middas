@@ -831,7 +831,7 @@ export default function NeuralAssistantModule() {
           ) : (
             <div className="flex items-center gap-2 text-groq-orange">
               <Mic className="w-6 h-6 animate-pulse" />
-              <span className="text-lg font-medium">Listening for "{wakeWord}"...</span>
+              <span className="text-lg font-medium">Listening for &quot;{wakeWord}&quot;...</span>
             </div>
           )}
 
