@@ -1,0 +1,60 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# next.js
+.next
+out
+dist
+build
+
+# env files (contain secrets)
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.production.local
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# testing / coverage
+coverage
+*.lcov
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# vercel
+.vercel
+
+# misc
+.cache
+.turbo
+
+# jarvis local artifacts
+jarvis-proof.txt
+jarvis-test-out.json
+.jarvis/
+
+# npm lockfile (project uses pnpm)
+package-lock.json
+
+# local windows binaries (do not commit; container is linux)
+pnpm.exe
+*.exe
