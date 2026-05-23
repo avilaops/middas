@@ -22,7 +22,13 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - run: pnpm lint --if-present
+      - name: Lint (if script present)
+        run: |
+          if node -e "process.exit(require('./package.json').scripts?.lint ? 0 : 1)"; then
+            pnpm lint
+          else
+            echo "No lint script; skipping."
+          fi
 
       - name: Type check
         run: pnpm exec tsc --noEmit
